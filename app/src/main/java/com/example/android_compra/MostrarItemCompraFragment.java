@@ -30,7 +30,7 @@ class MostrarItemCompraFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ItemsCompraViewM itemsViewM = new ViewModelProvider(requireActivity()).get(ItemsCompraViewM.class);
-        ItemsCompraViewM.seleccionado().observe(getViewLifecycleOwner(), new Observer<Items>() {
+        itemsViewM.seleccionado().observe(getViewLifecycleOwner(), new Observer<Items>() {
             @Override
             public void onChanged(Items items) {
                 binding.nombre.setText(items.nombre);
