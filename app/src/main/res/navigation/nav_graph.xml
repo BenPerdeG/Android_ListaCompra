@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recyclerItemsFragment">
+
+    <fragment
+        android:id="@+id/recyclerItemsFragment"
+        android:name="com.example.android_compra.RecyclerItemsFragment"
+        android:label="Lista de Items"
+        tools:layout="@layout/fragment_recycler_items" >
+        <action
+            android:id="@+id/action_recyclerItemsFragment_to_nuevoItemFragment"
+            app:destination="@id/nuevoItemFragment" />
+        <action
+            android:id="@+id/action_recyclerItemsFragment_to_mostrarItemFragment"
+            app:destination="@id/mostrarItemFragment" />
+        <action
+            android:id="@+id/action_recyclerItemsFragment_to_compraItems3"
+            app:destination="@id/compraItems"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/nuevoItemFragment"
+        android:name="com.example.android_compra.NuevoItemFragment"
+        android:label="fragment_nuevo_item"
+        tools:layout="@layout/fragment_nuevo_item" />
+    <fragment
+        android:id="@+id/mostrarItemFragment"
+        android:name="com.example.android_compra.MostrarItemFragment"
+        android:label="fragment_mostrar_item"
+        tools:layout="@layout/fragment_mostrar_items" />
+    <fragment
+        android:id="@+id/compraItems"
+        android:name="com.example.android_compra.RecyclerCompraFragment"
+        android:label="Carrito de Compra"
+        tools:layout="@layout/fragment_recycler_compra" >
+        <action
+            android:id="@+id/action_compraItems_to_mostrarItemFragment"
+            app:destination="@id/mostrarItemFragment" />
+        <action
+            android:id="@+id/action_compraItems_to_recyclerItemsFragment2"
+            app:destination="@id/recyclerItemsFragment" />
+    </fragment>
+</navigation>

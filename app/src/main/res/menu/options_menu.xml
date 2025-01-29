@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/recyclerItemsFragment"
+        android:icon="@drawable/free_add_to_cart_icon_3046_thumb"
+        android:title="Items"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/compraItems"
+        android:icon="@drawable/icon_2_"
+        android:title="Compra"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>
