@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_compra.databinding.FragmentRecyclerCompraBinding;
-import com.example.android_compra.databinding.FragmentRecyclerItemsBinding;
 import com.example.android_compra.databinding.ViewholderItemBinding;
 
 import java.util.List;
@@ -54,8 +53,8 @@ public class RecyclerCompraFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    itemsViewM.seleccionar(items);
-                    navController.navigate(R.id.action_recyclerItemsFragment_to_mostrarItemFragment);
+                    itemsCompraViewM.seleccionar(items);
+                    navController.navigate(R.id.action_compraItems_to_mostrarItemCompraFragment);
                 }
             });
         }
@@ -77,7 +76,7 @@ public class RecyclerCompraFragment extends Fragment {
 
 
     private FragmentRecyclerCompraBinding binding;
-    private ItemsViewM itemsViewM;
+    private ItemsCompraViewM itemsCompraViewM;
     private NavController navController;
 
     @Override
@@ -92,14 +91,14 @@ public class RecyclerCompraFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        itemsViewM = new ViewModelProvider(requireActivity()).get(ItemsViewM.class);
+        itemsCompraViewM = new ViewModelProvider(requireActivity()).get(ItemsCompraViewM.class);
         navController = Navigation.findNavController(view);
 
 
         ItemssAdapter itemssAdapter = new ItemssAdapter();
         binding.recyclerView.setAdapter(itemssAdapter);
 
-        itemsViewM.obtener().observe(getViewLifecycleOwner(), new Observer<List<Items>>() {
+        itemsCompraViewM.obtener().observe(getViewLifecycleOwner(), new Observer<List<Items>>() {
             @Override
             public void onChanged(List<Items> items) {
                 itemssAdapter.establecerLista(items);
@@ -119,7 +118,7 @@ public class RecyclerCompraFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int posicion = viewHolder.getAdapterPosition();
                 Items items = itemssAdapter.obtenerItems(posicion);
-                itemsViewM.eliminar(items);
+                itemsCompraViewM.eliminar(items);
 
             }
         }).attachToRecyclerView(binding.recyclerView);

@@ -48,12 +48,7 @@ class ItemsCompraRepo{
         void cuandoFinaliceCompra(List<Items> itemsCompra);
     }
 
-    ItemsCompraRepo(){
-        itemsCompra.add(new Items("Piña","Una piña. ¿Bajo el mar? NO"));
-        itemsCompra.add(new Items("Naranja","El color no la fruta. Bote de pintura"));
-        itemsCompra.add(new Items("Kebab","mmmmmmhhhmhmh Kebaaaab..."));
 
-    }
 
     List<Items> obtenerCOMPRA() {
         return itemsCompra;
