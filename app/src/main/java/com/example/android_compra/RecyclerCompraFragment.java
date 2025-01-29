@@ -48,7 +48,7 @@ public class RecyclerCompraFragment extends Fragment {
             Items items = this.items.get(position);
 
             holder.binding.nombre.setText(items.nombre);
-            holder.binding.cantidad.setText(items.cantidad);
+
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

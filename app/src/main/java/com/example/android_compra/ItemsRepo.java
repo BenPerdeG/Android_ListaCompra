@@ -33,7 +33,6 @@ public class ItemsRepo {
     }
 
     void actualizar(Items items, String cantidad, Callback callback) {
-        items.cantidad = cantidad;
         callback.cuandoFinalice(this.items);
     }
 }
@@ -48,7 +47,12 @@ class ItemsCompraRepo{
         void cuandoFinaliceCompra(List<Items> itemsCompra);
     }
 
+    ItemsCompraRepo(){
+        itemsCompra.add(new Items("Piñañññ","Una piña. ¿Bajo el mar? NO"));
+        itemsCompra.add(new Items("Naranja","El color no la fruta. Bote de pintura"));
+        itemsCompra.add(new Items("Kebab","mmmmmmhhhmhmh Kebaaaab..."));
 
+    }
 
     List<Items> obtenerCOMPRA() {
         return itemsCompra;
@@ -65,7 +69,6 @@ class ItemsCompraRepo{
     }
 
     void actualizarCOMPRA(Items items, String cantidad, Callback callback) {
-        items.cantidad = cantidad;
         callback.cuandoFinaliceCompra(this.itemsCompra);
     }
 }

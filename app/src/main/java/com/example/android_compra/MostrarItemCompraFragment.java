@@ -35,7 +35,7 @@ class MostrarItemCompraFragment extends Fragment {
             public void onChanged(Items items) {
                 binding.nombre.setText(items.nombre);
                 binding.descripcion.setText(items.descripcion);
-                binding.cantidad.setText(items.cantidad);
+
             }
         });
 
