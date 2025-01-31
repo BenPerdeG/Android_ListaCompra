@@ -54,7 +54,8 @@ public class RecyclerCompraFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     itemsCompraViewM.seleccionar(items);
-                    navController.navigate(R.id.action_compraItems_to_mostrarItemCompraFragment);
+                    //navController.navigate(R.id.action_compraItems_to_mostrarItemCompraFragment);
+                    navController.navigate(R.id.mostrarItemCompraFragment);
                 }
             });
         }
@@ -119,7 +120,6 @@ public class RecyclerCompraFragment extends Fragment {
                 int posicion = viewHolder.getAdapterPosition();
                 Items items = itemssAdapter.obtenerItems(posicion);
                 itemsCompraViewM.eliminar(items);
-
             }
         }).attachToRecyclerView(binding.recyclerView);
     }

@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.android_compra.databinding.FragmentMostrarCompraItemsBinding;
 
-class MostrarItemCompraFragment extends Fragment {
+public class MostrarItemCompraFragment extends Fragment {
     private FragmentMostrarCompraItemsBinding binding;
 
     @Override
@@ -38,6 +38,7 @@ class MostrarItemCompraFragment extends Fragment {
 
             }
         });
+
 
     }
 }

@@ -79,6 +79,7 @@ public class RecyclerItemsFragment extends Fragment {
     private FragmentRecyclerItemsBinding binding;
     private ItemsViewM itemsViewM;
     private NavController navController;
+    private ItemsCompraViewM itemsCompraViewM;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,6 +93,7 @@ public class RecyclerItemsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         itemsViewM = new ViewModelProvider(requireActivity()).get(ItemsViewM.class);
+        itemsCompraViewM = new ViewModelProvider(requireActivity()).get(ItemsCompraViewM.class);
         navController = Navigation.findNavController(view);
 
         binding.irANuevoElemento.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +125,7 @@ public class RecyclerItemsFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int posicion = viewHolder.getAdapterPosition();
                 Items items = itemssAdapter.obtenerItems(posicion);
+                itemsCompraViewM.insertar(items);
                 itemsViewM.eliminar(items);
 
             }

@@ -48,4 +48,6 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui:2.3.0")
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("com.google.android.material:material:1.3.0-alpha03")
+    implementation ("androidx.room:room-runtime:2.2.5")
+    annotationProcessor ("androidx.room:room-compiler:2.2.5")
 }
