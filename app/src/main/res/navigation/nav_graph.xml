@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/recyclerItemsFragment"
         android:name="com.example.android_compra.RecyclerItemsFragment"
-        android:label="Lista de Items"
+        android:label="Lista de la Compra"
         tools:layout="@layout/fragment_recycler_items" >
         <action
             android:id="@+id/action_recyclerItemsFragment_to_nuevoItemFragment"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/compraItems"
         android:name="com.example.android_compra.RecyclerCompraFragment"
-        android:label="Carrito de Compra"
+        android:label="Mi carrito"
         tools:layout="@layout/fragment_recycler_compra" >
         <action
             android:id="@+id/action_compraItems_to_mostrarItemCompraFragment"
