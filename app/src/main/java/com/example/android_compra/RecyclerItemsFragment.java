@@ -126,7 +126,8 @@ public class RecyclerItemsFragment extends Fragment {
                 int posicion = viewHolder.getAdapterPosition();
                 Items items = itemssAdapter.obtenerItems(posicion);
                 itemsCompraViewM.insertar(items);
-                itemsViewM.eliminar(items);
+                itemsViewM.actualizar(items);
+                itemsViewM.obtener();
 
             }
         }).attachToRecyclerView(binding.recyclerView);

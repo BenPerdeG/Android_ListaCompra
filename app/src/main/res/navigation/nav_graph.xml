@@ -27,12 +27,12 @@
     <fragment
         android:id="@+id/nuevoItemFragment"
         android:name="com.example.android_compra.NuevoItemFragment"
-        android:label="fragment_nuevo_item"
+        android:label="Añadir Item"
         tools:layout="@layout/fragment_nuevo_item" />
     <fragment
         android:id="@+id/mostrarItemFragment"
         android:name="com.example.android_compra.MostrarItemFragment"
-        android:label="fragment_mostrar_item"
+        android:label="Mostrar Item"
         tools:layout="@layout/fragment_mostrar_items" />
     <fragment
         android:id="@+id/compraItems"
@@ -49,6 +49,6 @@
     <fragment
         android:id="@+id/mostrarItemCompraFragment"
         android:name="com.example.android_compra.MostrarItemCompraFragment"
-        android:label="fragment_mostrar_compra_items"
+        android:label="Mostrar Item"
         tools:layout="@layout/fragment_mostrar_compra_items" />
 </navigation>

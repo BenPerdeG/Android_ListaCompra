@@ -1,74 +1,69 @@
 package com.example.android_compra;
 
+import android.app.Application;
+
+import androidx.lifecycle.LiveData;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class ItemsRepo {
+    ItemsBaseDeDatos.ItemsDao elementosDao;
 
-    List<Items> items = new ArrayList<>();
+    ItemsRepo(Application application){
+        elementosDao = ItemsBaseDeDatos.obtenerInstancia(application).obtenerItemsDao();
+    }
+    Executor executor = Executors.newSingleThreadExecutor();
 
     interface Callback {
         void cuandoFinalice(List<Items> items);
     }
 
     ItemsRepo() {
-        items.add(new Items("Piña", "Una piña. ¿Bajo el mar? NO"));
-        items.add(new Items("Naranja", "El color no la fruta. Bote de pintura"));
-        items.add(new Items("Kebab", "mmmmmmhhhmhmh Kebaaaab..."));
+
 
     }
 
-    List<Items> obtener() {
-        return items;
+    LiveData<List<Items>> obtener() {
+        return elementosDao.obtener();
     }
 
-    void insertar(Items items, Callback callback) {
-        this.items.add(items);
-        callback.cuandoFinalice(this.items);
+    LiveData<List<Items>> obtenerCOMPRA() {
+        return elementosDao.obtenerCompra();
     }
 
-    void eliminar(Items items, Callback callback) {
-        this.items.remove(items);
-        callback.cuandoFinalice(this.items);
+    void insertar(Items items) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                elementosDao.insertar(items);
+            }
+        });
     }
 
-    void actualizar(Items items, String cantidad, Callback callback) {
-        callback.cuandoFinalice(this.items);
+    void eliminar(Items items) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                elementosDao.eliminar(items);
+            }
+        });
     }
+
+    void actualizar(Items items) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                items.carrito=true;
+                elementosDao.actualizar(items);
+            }
+        });
+    }
+
+
+
 }
 
 
-////////////Segundo Repo
-
-class ItemsCompraRepo{
-    List<Items> itemsCompra = new ArrayList<>();
-
-    interface Callback {
-        void cuandoFinaliceCompra(List<Items> itemsCompra);
-    }
-
-    ItemsCompraRepo(){
-        itemsCompra.add(new Items("Piñañññ","Una piña. ¿Bajo el mar? NO"));
-        itemsCompra.add(new Items("Naranja","El color no la fruta. Bote de pintura"));
-        itemsCompra.add(new Items("Kebab","mmmmmmhhhmhmh Kebaaaab..."));
-
-    }
-
-    List<Items> obtenerCOMPRA() {
-        return itemsCompra;
-    }
-
-    void insertarCOMPRA(Items items, Callback callback){
-        this.itemsCompra.add(items);
-        callback.cuandoFinaliceCompra(this.itemsCompra);
-    }
-
-    void eliminarCOMPRA(Items items, Callback callback) {
-        this.itemsCompra.remove(items);
-        callback.cuandoFinaliceCompra(this.itemsCompra);
-    }
-
-    void actualizarCOMPRA(Items items, String cantidad, Callback callback) {
-        callback.cuandoFinaliceCompra(this.itemsCompra);
-    }
-}
