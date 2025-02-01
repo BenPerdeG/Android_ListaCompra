@@ -9,11 +9,13 @@
 
     <EditText
         android:id="@+id/nombre"
+        android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"/>
     <EditText
         android:id="@+id/descripcion"
+        android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Descripcion"/>
