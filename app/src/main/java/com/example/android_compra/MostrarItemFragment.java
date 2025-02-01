@@ -2,20 +2,16 @@ package com.example.android_compra;
 
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.android_compra.databinding.FragmentMostrarCompraItemsBinding;
 import com.example.android_compra.databinding.FragmentMostrarItemsBinding;
-import com.example.android_compra.databinding.FragmentRecyclerItemsBinding;
+
 
 
 public class MostrarItemFragment extends Fragment {

@@ -1,8 +1,6 @@
 package com.example.android_compra;
 
-
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -12,14 +10,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.android_compra.databinding.FragmentRecyclerItemsBinding;
 import com.example.android_compra.databinding.ViewholderItemBinding;
-
 import java.util.List;
 
 public class RecyclerItemsFragment extends Fragment {
@@ -127,7 +122,7 @@ public class RecyclerItemsFragment extends Fragment {
                 Items items = itemssAdapter.obtenerItems(posicion);
                 itemsCompraViewM.insertar(items);
                 itemsViewM.actualizar(items);
-                itemsViewM.obtener();
+
 
             }
         }).attachToRecyclerView(binding.recyclerView);

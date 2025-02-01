@@ -1,11 +1,10 @@
 package com.example.android_compra;
-import android.app.Application;
 
+import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import java.util.List;
 
 public class ItemsViewM extends AndroidViewModel {
