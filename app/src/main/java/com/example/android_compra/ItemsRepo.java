@@ -61,7 +61,15 @@ public class ItemsRepo {
             }
         });
     }
-
+    void devolver(Items items) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                items.carrito=false;
+                elementosDao.actualizar(items);
+            }
+        });
+    }
 
 
 }

@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     tools:context=".MostrarItemCompraFragment">
 
@@ -11,13 +10,28 @@
         android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="48sp"/>
+        android:textSize="48sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
     <TextView
         android:id="@+id/descripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:layout_below="@id/nombre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="#FF0000"
+        app:srcCompat="@drawable/trashcanicon" />
 
-
-</LinearLayout>
+</RelativeLayout>

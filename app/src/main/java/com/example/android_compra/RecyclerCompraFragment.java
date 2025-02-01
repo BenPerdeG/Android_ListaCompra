@@ -119,7 +119,7 @@ public class RecyclerCompraFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int posicion = viewHolder.getAdapterPosition();
                 Items items = itemssAdapter.obtenerItems(posicion);
-                itemsCompraViewM.eliminar(items);
+                itemsCompraViewM.actualizar(items);
             }
         }).attachToRecyclerView(binding.recyclerView);
     }

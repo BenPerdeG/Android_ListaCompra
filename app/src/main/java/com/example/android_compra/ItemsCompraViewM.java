@@ -38,6 +38,9 @@ public class ItemsCompraViewM extends AndroidViewModel {
         ItemsSeleccionado.setValue(items);
     }
 
+    void actualizar(Items items){
+        itempsrepo.devolver(items);
+    }
     static MutableLiveData<Items> seleccionado() {
         return ItemsSeleccionado;
     }
