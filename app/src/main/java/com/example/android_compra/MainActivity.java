@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
 
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setTitle("Lista de Items");
+        getSupportActionBar().setTitle("Lista de la Compra");
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.recyclerItemsFragment, R.id.compraItems

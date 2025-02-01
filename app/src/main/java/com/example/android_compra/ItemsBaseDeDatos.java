@@ -23,7 +23,7 @@ public abstract class ItemsBaseDeDatos extends RoomDatabase {
             synchronized (ItemsBaseDeDatos.class) {
                 if (INSTANCIA == null) {
                     INSTANCIA = Room.databaseBuilder(context,
-                                    ItemsBaseDeDatos.class, "elementos.db")
+                                    ItemsBaseDeDatos.class, "items.db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }

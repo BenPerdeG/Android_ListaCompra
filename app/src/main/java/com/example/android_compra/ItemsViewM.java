@@ -29,18 +29,12 @@ public class ItemsViewM extends AndroidViewModel {
     void insertar(Items items){
         itempsrepo.insertar(items);
     }
-
-    void eliminar(Items items){
-       itempsrepo.eliminar(items);
-    }
-
     void actualizar(Items items){
         itempsrepo.actualizar(items);
     }
     void seleccionar(Items items){
         ItemsSeleccionado.setValue(items);
     }
-
     MutableLiveData<Items> seleccionado(){
         return ItemsSeleccionado;
     }

@@ -79,7 +79,7 @@ public class RecyclerItemsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return (binding = FragmentRecyclerItemsBinding.inflate(inflater, container, false)).getRoot();
     }
 

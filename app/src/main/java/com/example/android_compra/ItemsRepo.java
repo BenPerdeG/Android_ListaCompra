@@ -14,15 +14,6 @@ public class ItemsRepo {
     }
     Executor executor = Executors.newSingleThreadExecutor();
 
-    interface Callback {
-        void cuandoFinalice(List<Items> items);
-    }
-
-    ItemsRepo() {
-
-
-    }
-
     LiveData<List<Items>> obtener() {
         return elementosDao.obtener();
     }
@@ -67,8 +58,6 @@ public class ItemsRepo {
             }
         });
     }
-
-
 }
 
 

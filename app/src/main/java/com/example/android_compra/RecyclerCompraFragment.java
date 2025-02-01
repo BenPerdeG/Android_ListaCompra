@@ -51,7 +51,7 @@ public class RecyclerCompraFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     itemsCompraViewM.seleccionar(items);
-                    //navController.navigate(R.id.action_compraItems_to_mostrarItemCompraFragment);
+
                     navController.navigate(R.id.mostrarItemCompraFragment);
                 }
             });
@@ -80,7 +80,7 @@ public class RecyclerCompraFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
 
         return (binding = FragmentRecyclerCompraBinding.inflate(inflater, container, false)).getRoot();
     }
